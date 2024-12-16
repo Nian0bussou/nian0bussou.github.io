@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     私は無言症<br>
     私はレズビアンです<br>
     私はOverwatch2やLoLのようなゲームで人生を無駄にしてる<br>
-    通常はCDawgVA、Ludwig、DougDoug、Theprimeagen、Flatsなどのストリーマーを見ながらプログラミングやゲームをする<br>
+    通常はCDawgVA、Ludwig、DougDoug、Theprimeagen、Flatsなどの<br>
+    ストリーマーを見ながらプログラミングやゲームをする<br>
   `
 
   div.appendChild(imp)
