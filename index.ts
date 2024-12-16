@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
   div.className = 'div_'
   const imp = document.createElement('p')
   imp.innerHTML = `
-    !! 私は無言症 !!<br />
-    私はニアンです.<br />
-    女性<br />
-    カナダ出身です<br />
-    私は女性なので、他の女性を見るとパニックに陥る<br />
-    私はOverwatch2やLoLのようなゲームで人生を無駄にしてる<br />
-    通常はCDawgVA、Ludwig、DougDoug、Theprimeagen、Flatsなどのストリーマーを見ながらプログラミングやゲームをする<br />
+    私はニアンです<br>
+    女性<br>
+    カナダ出身です<br>
+    私は無言症<br>
+    私はレズビアンです<br>
+    私はOverwatch2やLoLのようなゲームで人生を無駄にしてる<br>
+    通常はCDawgVA、Ludwig、DougDoug、Theprimeagen、Flatsなどのストリーマーを見ながらプログラミングやゲームをする<br>
   `
 
   div.appendChild(imp)
@@ -97,6 +97,8 @@ function createCollapsible(body: HTMLElement, title: string, content: string, in
 
   const button = document.createElement('button')
   button.className = `collapsible${index} but_tits button_`
+  button.style.marginLeft = "1em";
+  button.style.marginBottom = "1em";
   button.textContent = title
 
   body.appendChild(button)
@@ -106,9 +108,7 @@ function createCollapsible(body: HTMLElement, title: string, content: string, in
   contentDiv.innerHTML = content
   body.appendChild(contentDiv)
 
-  button.addEventListener('click', () => {
-    contentDiv.classList.toggle('open')
-  })
+  button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
 
   body.appendChild(document.createElement('br'))
 }
