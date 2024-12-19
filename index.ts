@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     UH.createBR(),
     // collapsible sections
     UH.createCollapsibleAndContent('ソーシャル<br>Socials', `<ul>
-        ${UH.li_GetListElement(`Discord/ ashita_nian`)},
+        ${UH.li_GetListElement(`Discord/ ashita_nian`)}
         ${UH.li_GetListElement(`Github/ ${UH.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
         ${UH.li_GetListElement(`Twitter/ ${UH.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
         ${UH.li_GetListElement(`Bluesky/ ${UH.a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
       `, 0
     ),
     UH.createCollapsibleAndContent('読める言語<br>Languages I speak', `<ul>
-        ${UH.li_GetListElement("フランス語<br>French")}
-        ${UH.li_GetListElement("英語<br>English")}
-        ${UH.li_GetListElement("<stike>日本語<br>Japanese</strike>")}
+        ${UH.li_GetListElement("フランス語 | French")}
+        ${UH.li_GetListElement("英語 | English")}
+        ${UH.li_GetListElement("<stike>日本語 | Japanese</strike>")}
       </ul>`, 1
     ),
     UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング<br>Programming languages ranked by experience', `<ol>
