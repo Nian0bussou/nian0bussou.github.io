@@ -1,22 +1,43 @@
 "use strict";
+function appendList(elem, ls) {
+    ls.forEach((value) => elem.appendChild(value));
+}
+function createBR() {
+    return document.createElement('br');
+}
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
-    body.appendChild(document.createElement('br'));
-    body.appendChild(document.createElement('br'));
+    const title = document.createElement('h1');
+    title.innerHTML = "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>";
+    title.style.color = "beige";
+    title.style.marginBottom = "1em";
+    title.style.backdropFilter = "blur(10px)";
+    title.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    title.style.borderRadius = "10px";
+    title.style.color = "rgb(221, 206, 255)";
+    title.style.padding = "30px";
+    title.style.width = "max-content";
+    title.style.marginLeft = "auto";
+    title.style.marginRight = "auto";
     // Create the div with paragraph
     const div = document.createElement('div');
     div.className = 'div_';
     const imp = document.createElement('p');
     imp.innerHTML = `
-    我はニェン、カナダに住んでいる<br>
-    レズビアンです<br>
-    プログラミングとゲームをすることがすきです
+    我はニェン、そしてカナダに住んでいて<br>
+    レズビアンでまして<br>
+    プログラミングとゲームをすることがすきです<br>
   `;
     imp.style.marginLeft = "1em";
     imp.style.marginBottom = "1em";
     div.appendChild(imp);
-    body.appendChild(div);
-    body.appendChild(document.createElement('br'));
+    appendList(body, [
+        createBR(),
+        title,
+        createBR(),
+        div,
+        createBR(),
+    ]);
     // Create collapsible sections
     createCollapsible(body, 'ソーシャル', `
       <ul>
