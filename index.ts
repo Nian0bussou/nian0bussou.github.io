@@ -47,18 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   createCollapsible(body,
     'ソーシャル', `
       <ul>
-        <li>
-          Discord/ ashita_nian
-        </li>
-        <li>
-          Github/ <a href="https://github.com/Nian0Bussou" target="_blank">Nian0Bussou</a>
-        </li>
-        <li>
-          Twitter/ <a href="https://x.com/NianToshi" target="_blank">NianToshi</a>
-        </li>
-        <li>
-          Bluesky/ <a href="https://bsky.app/profile/ashita-nian.bsky.social" target="_blank">ashita-nian</a>
-        </li>
+        ${li_GetListElement(`Discord/ ashita_nian`)},
+        ${li_GetListElement(`Github/ ${a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
+        ${li_GetListElement(`Twitter/ ${a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
+        ${li_GetListElement(`Bluesky/ ${a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
       </ul>
       <sub><b><i> I have no other way of being contacted</i></b></sub>
     `, 0
@@ -103,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ${li_GetListElement('LoL')}
     </ul>`, 4
   )
+
+  createCollapsible(body, '連関（れんかん）', `<ul>
+    ${li_GetListElement('Arcane')}
+    ${li_GetListElement("Arknights' lore")}
+    ${li_GetListElement("Wis'adel")}
+    ${li_GetListElement('Overwatch 2')}
+    </ul>`, 3
+  )
 })
 
 
@@ -144,4 +144,7 @@ function nameIcon(name: string, icon: string) {
 }
 function li_GetListElement(str: string) {
   return `<li>${str}</li>`
+}
+function a_GetAElement(link: string, name: string) {
+  return `<a href="${link}" target="_blank">${name}</a>`
 }
