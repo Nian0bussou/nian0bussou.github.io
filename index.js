@@ -8,14 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     div.className = 'div_';
     const imp = document.createElement('p');
     imp.innerHTML = `
-    私はニアンです<br>
-    女性<br>
-    カナダ出身です<br>
-    私は無言症<br>
-    私はレズビアンです<br>
-    私はOverwatch2やLoLのようなゲームで人生を無駄にしてる<br>
-    通常はCDawgVA、Ludwig、DougDoug、Theprimeagen、Flatsなどの<br>
-    ストリーマーを見ながらプログラミングやゲームをする<br>
+    我はニアン、カナダ出身です<br>
+    レズビアンです<br>
+    プログラミングとゲームをすることがすきです
   `;
     div.appendChild(imp);
     body.appendChild(div);
@@ -63,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </ul>`, 3);
     createCollapsible(body, '好きない', `<ul>
     ${li_GetListElement('人')}
+    ${li_GetListElement('LoL')}
     </ul>`, 4);
 });
 function createCollapsible(body, title, content, index) {
