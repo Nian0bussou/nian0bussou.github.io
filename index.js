@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createCollapsible(body, 'Contacts', `
       <ul>
         <li>
-          Discord\\ashita_nian
+          Discord\\ ashita_nian
         </li>
         <li>
           Github<a href="https://github.com/Nian0Bussou" target="_blank">/Nian0Bussou</a>
