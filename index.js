@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ${li_GetListElement('LoL')}
     </ul>`, 4);
     createCollapsible(body, '連関（れんかん）', `<ul>
-    ${li_GetListElement(`${a_GetAElement("translate.google.com", "translate")}`)}
-    ${li_GetListElement(`${a_GetAElement("reddit.com", "jlailu")}`)}
-    ${li_GetListElement(`${a_GetAElement("jisho.org", "辞書")}`)}
+    ${li_GetListElement(`${a_GetAElement("https://translate.google.com", "translate")}`)}
+    ${li_GetListElement(`${a_GetAElement("https://www.reddit.com", "jlailu")}`)}
+    ${li_GetListElement(`${a_GetAElement("https://jisho.org", "辞書")}`)}
     ${li_GetListElement(`${a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
     </ul>`, 3);
 });
