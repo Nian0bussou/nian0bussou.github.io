@@ -113,9 +113,9 @@ class UH {
         document.head.appendChild(style);
         const button = document.createElement('button');
         button.className = `collapsible${index} but_tits button_`;
+        button.innerHTML = title;
         button.style.marginLeft = "1em";
         button.style.marginBottom = "1em";
-        button.textContent = title;
         const contentDiv = document.createElement('div');
         contentDiv.className = `content${index} div_`;
         contentDiv.innerHTML = content;
