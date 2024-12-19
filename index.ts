@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const title = document.createElement('h1')
   title.innerHTML = "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>"
-  title.style.color = "beige"
-  title.style.marginBottom = "1em"
   title.style.backdropFilter = "blur(10px)";
   title.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   title.style.borderRadius = "10px";
+  title.style.color = "beige"
   title.style.color = "rgb(221, 206, 255)";
-  title.style.padding = "30px";
-  title.style.width = "max-content";
+  title.style.marginBottom = "1em"
   title.style.marginLeft = "auto"
   title.style.marginRight = "auto"
+  title.style.padding = "30px";
+  title.style.width = "max-content";
 
   // Create the div with paragraph
   const div = document.createElement('div')
