@@ -37,10 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         createBR(),
         div,
         createBR(),
-    ]);
-    // Create collapsible sections
-    appendList(body, [
-        createCollapsibleAndContent(body, 'ソーシャル', `<ul>
+        // collapsible sections
+        createCollapsibleAndContent('ソーシャル', `<ul>
         ${li_GetListElement(`Discord/ ashita_nian`)},
         ${li_GetListElement(`Github/ ${a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
         ${li_GetListElement(`Twitter/ ${a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
@@ -48,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>
       <sub><b><i> I have no other way of being contacted</i></b></sub>
       `, 0),
-        createCollapsibleAndContent(body, '読める言語', `<ul>
+        createCollapsibleAndContent('読める言語', `<ul>
         ${li_GetListElement("フランス語")}
         ${li_GetListElement("英語")}
         ${li_GetListElement("日本語")}
       </ul>`, 1),
-        createCollapsibleAndContent(body, 'プログラミング言語の経験順にランキング', `<ol>
+        createCollapsibleAndContent('プログラミング言語の経験順にランキング', `<ol>
         ${nameIcon('Go        ', 'go')}
         ${nameIcon('C#        ', 'c--4')}
         ${nameIcon('HTML      ', 'html')}
@@ -68,17 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ${nameIcon('Python    ', 'python')}
         ${nameIcon('Ecmascript', 'js')}
       </ol>`, 2),
-        createCollapsibleAndContent(body, '好きです', `<ul>
+        createCollapsibleAndContent('好きです', `<ul>
         ${li_GetListElement('Arcane')}
         ${li_GetListElement("Arknights' lore")}
         ${li_GetListElement("Wis'adel")}
         ${li_GetListElement('Overwatch 2')}
       </ul>`, 3),
-        createCollapsibleAndContent(body, '好きない', `<ul>
+        createCollapsibleAndContent('好きない', `<ul>
         ${li_GetListElement('人')}
         ${li_GetListElement('LoL')}
       </ul>`, 4),
-        createCollapsibleAndContent(body, '便利（べんり）連関（れんかん）', `<ul>
+        createCollapsibleAndContent('便利（べんり）連関（れんかん）', `<ul>
         ${li_GetListElement(`${a_GetAElement("https://translate.google.com", "translate")}`)}
         ${li_GetListElement(`${a_GetAElement("https://www.reddit.com", "jlailu")}`)}
         ${li_GetListElement(`${a_GetAElement("https://jisho.org", "辞書")}`)}
@@ -86,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>`, 3)
     ]);
 });
-function createCollapsibleAndContent(body, title, content, index) {
+function createCollapsibleAndContent(title, content, index) {
     const style = document.createElement('style');
     style.textContent = `
                         .content${index} {
