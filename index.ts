@@ -135,7 +135,7 @@ class UH {
     button.className = `collapsible${index} but_tits button_`
     button.style.marginLeft = "1em";
     button.style.marginBottom = "1em";
-    button.textContent = title
+    button.innerHTML = title
 
     const contentDiv = document.createElement('div')
     contentDiv.className = `content${index} div_`
