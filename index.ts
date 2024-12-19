@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Contacts', `
       <ul>
         <li>
-          Discord:<a href="https://discordapp.com/users/488805334954147853" target="_blank">@yumeno_no_yuri</a>
+          Discord\\ashita_nian
         </li>
         <li>
           Github<a href="https://github.com/Nian0Bussou" target="_blank">/Nian0Bussou</a>
