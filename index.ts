@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     プログラミングとゲームをすることがすきです
   `
 
+  imp.style.marginLeft = "1em"
+  imp.style.marginBottom = "1em"
+
   div.appendChild(imp)
 
   body.appendChild(div)
@@ -114,7 +117,6 @@ function createCollapsible(body: HTMLElement, title: string, content: string, in
 
   body.appendChild(document.createElement('br'))
 }
-
 function nameIcon(name: string, icon: string) {
   return li_GetListElement(
     `${name} <img class="icon" src="/svgs/${icon}.svg" alt=" icon" />`

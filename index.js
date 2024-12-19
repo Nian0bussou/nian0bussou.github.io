@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     レズビアンです<br>
     プログラミングとゲームをすることがすきです
   `;
+    imp.style.marginLeft = "1em";
+    imp.style.marginBottom = "1em";
     div.appendChild(imp);
     body.appendChild(div);
     body.appendChild(document.createElement('br'));
