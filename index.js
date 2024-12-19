@@ -11,11 +11,11 @@ const defaultBackground = Backgrounds.Back1;
 let background;
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
-    let cookie = UCookie.getCookieWithEnum();
+    let cookie = UC.getCookieWithEnum();
     cl(cookie);
     if (cookie === null) {
         cl("setCookie to default");
-        UCookie.setCookie(defaultBackground);
+        UC.setCookie(defaultBackground);
     }
     background = cookie !== null && cookie !== void 0 ? cookie : defaultBackground;
     // body.style.background = cookie ?? defaultBackground
@@ -43,62 +43,63 @@ document.addEventListener('DOMContentLoaded', () => {
     我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることが好きです。
   `;
     div.appendChild(imp);
-    UHTML.appendList(body, [
-        UHTML.createBR(),
+    UH.appendList(body, [
+        UH.createBR(),
         title,
-        UHTML.createBR(),
+        UH.createBR(),
         div,
-        UHTML.createBR(),
+        UH.createBR(),
         // collapsible sections
-        UHTML.createCollapsibleAndContent('ソーシャル', `<ul>
-        ${UHTML.li_GetListElement(`Discord/ ashita_nian`)},
-        ${UHTML.li_GetListElement(`Github/ ${UHTML.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
-        ${UHTML.li_GetListElement(`Twitter/ ${UHTML.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
-        ${UHTML.li_GetListElement(`Bluesky/ ${UHTML.a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
+        UH.createCollapsibleAndContent('ソーシャル', `<ul>
+        ${UH.li_GetListElement(`Discord/ ashita_nian`)},
+        ${UH.li_GetListElement(`Github/ ${UH.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
+        ${UH.li_GetListElement(`Twitter/ ${UH.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
+        ${UH.li_GetListElement(`Bluesky/ ${UH.a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
       </ul>
       <sub><b><i> I have no other way of being contacted</i></b></sub>
       `, 0),
-        UHTML.createCollapsibleAndContent('読める言語', `<ul>
-        ${UHTML.li_GetListElement("フランス語")}
-        ${UHTML.li_GetListElement("英語")}
-        ${UHTML.li_GetListElement("日本語")}
+        UH.createCollapsibleAndContent('読める言語', `<ul>
+        ${UH.li_GetListElement("フランス語")}
+        ${UH.li_GetListElement("英語")}
+        ${UH.li_GetListElement("日本語")}
       </ul>`, 1),
-        UHTML.createCollapsibleAndContent('プログラミング言語の経験順にランキング', `<ol>
-        ${UHTML.nameIcon('Go        ', 'go')}
-        ${UHTML.nameIcon('C#        ', 'c--4')}
-        ${UHTML.nameIcon('HTML      ', 'html')}
-        ${UHTML.nameIcon('Unity     ', 'unity')}
-        ${UHTML.nameIcon('CSS       ', 'css')}
-        ${UHTML.nameIcon('Rust      ', 'rust')}
-        ${UHTML.nameIcon('F#        ', 'fsharp')}
-        ${UHTML.nameIcon('Haskell   ', 'haskell')}
-        ${UHTML.nameIcon('C++       ', 'c++')}
-        ${UHTML.nameIcon('C         ', 'c')}
-        ${UHTML.nameIcon('OCamL     ', 'ocaml')}
-        ${UHTML.nameIcon('Python    ', 'python')}
-        ${UHTML.nameIcon('Ecmascript', 'js')}
+        UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング', `<ol>
+        ${UH.nameIcon('Go        ', 'go')}
+        ${UH.nameIcon('C#        ', 'c--4')}
+        ${UH.nameIcon('HTML      ', 'html')}
+        ${UH.nameIcon('Unity     ', 'unity')}
+        ${UH.nameIcon('CSS       ', 'css')}
+        ${UH.nameIcon('Rust      ', 'rust')}
+        ${UH.nameIcon('F#        ', 'fsharp')}
+        ${UH.nameIcon('Haskell   ', 'haskell')}
+        ${UH.nameIcon('C++       ', 'c++')}
+        ${UH.nameIcon('C         ', 'c')}
+        ${UH.nameIcon('OCamL     ', 'ocaml')}
+        ${UH.nameIcon('Python    ', 'python')}
+        ${UH.nameIcon('Ecmascript', 'js')}
       </ol>`, 2),
-        UHTML.createCollapsibleAndContent('好きです', `<ul>
-        ${UHTML.li_GetListElement('Arcane')}
-        ${UHTML.li_GetListElement("Arknights' lore")}
-        ${UHTML.li_GetListElement("Wis'adel")}
-        ${UHTML.li_GetListElement('Overwatch 2')}
+        UH.createCollapsibleAndContent('好きです', `<ul>
+        ${UH.li_GetListElement('Arcane')}
+        ${UH.li_GetListElement("Arknights' lore")}
+        ${UH.li_GetListElement("Wis'adel")}
+        ${UH.li_GetListElement('Overwatch 2')}
       </ul>`, 3),
-        UHTML.createCollapsibleAndContent('好きない', `<ul>
-        ${UHTML.li_GetListElement('人')}
-        ${UHTML.li_GetListElement('LoL')}
+        UH.createCollapsibleAndContent('好きない', `<ul>
+        ${UH.li_GetListElement('人')}
+        ${UH.li_GetListElement('LoL')}
       </ul>`, 4),
-        UHTML.createCollapsibleAndContent('便利（べんり）連関（れんかん）', `<ul>
-        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
-        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://translate.google.com", "translate")}`)}
-        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://www.reddit.com", "jlailu")}`)}
-        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://jisho.org", "辞書")}`)}
-        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
+        UH.createCollapsibleAndContent('便利（べんり）連関（れんかん）', `<ul>
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", "translate")}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "jlailu")}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", "辞書")}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3),
-        UHTML.createSelection(body)
+        UH.createSelection(body)
     ]);
 });
-class UHTML {
+// HTML utils
+class UH {
     static createCollapsibleAndContent(title, content, index) {
         const style = document.createElement('style');
         style.textContent = `
@@ -122,7 +123,7 @@ class UHTML {
         contentDiv.style.marginBottom = "1em";
         button.addEventListener('click', () => { contentDiv.classList.toggle('open'); });
         const div = document.createElement('div');
-        UHTML.appendList(div, [button, contentDiv, UHTML.createBR()]);
+        UH.appendList(div, [button, contentDiv, UH.createBR()]);
         return div;
     }
     static nameIcon(name, icon) {
@@ -162,10 +163,11 @@ class UHTML {
     }
     static changeBackground(body, bg) {
         body.style.backgroundImage = `url('${String(bg)}')`;
-        UCookie.setCookie(bg);
+        UC.setCookie(bg);
     }
 }
-class UCookie {
+// cookie utils
+class UC {
     static setCookie(value) {
         const name = "background";
         const date = new Date();
