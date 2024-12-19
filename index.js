@@ -1,4 +1,11 @@
 "use strict";
+var Backgrounds;
+(function (Backgrounds) {
+    Backgrounds["Back1"] = "back-w-city-skyline.jpg";
+    Backgrounds["Back2"] = "back.jpg";
+    Backgrounds["Back3"] = "back1.png";
+    Backgrounds["Back4"] = "backk.jpg";
+})(Backgrounds || (Backgrounds = {}));
 function appendList(elem, ls) {
     ls.forEach((value) => elem.appendChild(value));
 }
@@ -117,4 +124,23 @@ function li_GetListElement(str) {
 }
 function a_GetAElement(link, name) {
     return `<a href="${link}" target="_blank">${name}</a>`;
+}
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Calculate expiry date
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+function getCookieWithEnum(name) {
+    const cookieArray = document.cookie.split(';');
+    for (const cookie of cookieArray) {
+        const [key, value] = cookie.trim().split('=');
+        if (key === name) {
+            const decodedValue = decodeURIComponent(value);
+            if (Object.values(Backgrounds).includes(decodedValue)) { // Ensure it's a valid enum value
+                return decodedValue;
+            }
+        }
+    }
+    return null; // Return null if not found or invalid
 }

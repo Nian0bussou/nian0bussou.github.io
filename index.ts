@@ -1,3 +1,12 @@
+
+enum Backgrounds {
+  Back1 = "back-w-city-skyline.jpg",
+  Back2 = "back.jpg",
+  Back3 = "back1.png",
+  Back4 = "backk.jpg",
+}
+
+
 function appendList(elem: HTMLElement, ls: HTMLElement[]) {
   ls.forEach((value) => elem.appendChild(value))
 }
@@ -135,4 +144,23 @@ function li_GetListElement(str: string) {
 }
 function a_GetAElement(link: string, name: string) {
   return `<a href="${link}" target="_blank">${name}</a>`
+}
+function setCookie(name: string, value: Backgrounds, days: number): void {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Calculate expiry date
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+function getCookieWithEnum(name: string): Backgrounds | null {
+  const cookieArray = document.cookie.split(';');
+  for (const cookie of cookieArray) {
+    const [key, value] = cookie.trim().split('=');
+    if (key === name) {
+      const decodedValue = decodeURIComponent(value) as Backgrounds;
+      if (Object.values(Backgrounds).includes(decodedValue)) { // Ensure it's a valid enum value
+        return decodedValue;
+      }
+    }
+  }
+  return null; // Return null if not found or invalid
 }
