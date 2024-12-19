@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     div.style.marginBottom = "1em";
     const imp = document.createElement('p');
     imp.innerHTML = `
-    我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることがすきです。
+    我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることが好きです。
   `;
     div.appendChild(imp);
     UHTML.appendList(body, [
