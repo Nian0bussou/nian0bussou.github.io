@@ -106,6 +106,7 @@ function createCollapsible(body: HTMLElement, title: string, content: string, in
   const contentDiv = document.createElement('div')
   contentDiv.className = `content${index} div_`
   contentDiv.innerHTML = content
+  contentDiv.style.padding = "2%"
   body.appendChild(contentDiv)
 
   button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
