@@ -10,7 +10,7 @@ enum Backgrounds {
 }
 
 const defaultBackground = Backgrounds.Back1
-let background: Backgrounds = defaultBackground
+let background: Backgrounds
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body
@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     UCookie.setCookie(defaultBackground)
   }
 
-  body.style.background = cookie ?? defaultBackground
+  background = cookie ?? defaultBackground
+
+  // body.style.background = cookie ?? defaultBackground
+  body.style.backgroundImage = `url('${background}')`;
 
   const title = document.createElement('h1')
   title.innerHTML = "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>"
@@ -168,56 +171,59 @@ class UHTML {
     return document.createElement('br')
   }
 
-  static createSelection(body: HTMLElement) {
-    const select = document.createElement('select')
+  static createSelection(body: HTMLElement): HTMLSelectElement {
+    const select = document.createElement('select');
+    Object.entries(Backgrounds).forEach(([key, value]) => {
+      const option = document.createElement('option');
+      option.value = value; // Set value to the enum's value
+      option.textContent = key; // Display the key as the label
 
-    for (const value in Backgrounds) {
-      const option = document.createElement('option')
-      option.value = value
-      option.textContent = value
-      select.appendChild(option)
-    }
+      cl(`value : ${value}\nback  : ${background}`)
+
+      if (value === background) {
+        option.selected = true
+      }
+
+      select.appendChild(option);
+    });
 
     select.addEventListener('change', (evt) => {
-      let smth = evt.target as HTMLSelectElement
-      let value = smth.value
-      const decodedValue = value as Backgrounds;
-      background = decodedValue
-      this.changeBackground(body, background)
-    })
-    return select
+      const target = evt.target as HTMLSelectElement;
+      const selectedValue = target.value as Backgrounds; // Use value directly
+      background = selectedValue;
+      this.changeBackground(body, background);
+    });
+
+    return select;
   }
 
-  static changeBackground(body: HTMLElement, b: Backgrounds) {
-    console.log(b)
-    body.style.setProperty('background', b, 'important');
-    UCookie.setCookie(b)
+  static changeBackground(body: HTMLElement, bg: Backgrounds): void {
+    body.style.backgroundImage = `url('${String(bg)}')`;
+    UCookie.setCookie(bg);
   }
-
-
 }
 
 class UCookie {
   static setCookie(value: Backgrounds): void {
-    const name = "background"
+    const name = "background";
     const date = new Date();
-    date.setTime(date.getTime() + 100 * 24 * 60 * 60 * 1000); // Calculate expiry date
+    date.setTime(date.getTime() + 30000000);
     const expires = "expires=" + date.toUTCString();
-    document.cookie = `${name}=${value}; ${expires}; path=/`;
+    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
   }
+
   static getCookieWithEnum(): Backgrounds | null {
-    const name = "background"
+    const name = "background";
     const cookieArray = document.cookie.split(';');
     for (const cookie of cookieArray) {
       const [key, value] = cookie.trim().split('=');
       if (key === name) {
-        console.log("Cookie Value:", value)
         const decodedValue = decodeURIComponent(value) as Backgrounds;
-        if (Object.values(Backgrounds).includes(decodedValue)) { // Ensure it's a valid enum value
+        if (Object.values(Backgrounds).includes(decodedValue)) {
           return decodedValue;
         }
       }
     }
-    return null; // Return null if not found or invalid
+    return null;
   }
 }
