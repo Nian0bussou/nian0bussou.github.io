@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   div.className = 'div_'
   const imp = document.createElement('p')
   imp.innerHTML = `
-    我はニアン、カナダ出身です<br>
+    我はニェン、カナダに住んでいる<br>
     レズビアンです<br>
     プログラミングとゲームをすることがすきです
   `
