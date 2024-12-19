@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     div,
     UH.createBR(),
     // collapsible sections
-    UH.createCollapsibleAndContent('ソーシャル | Socials', `<ul>
+    UH.createCollapsibleAndContent('ソーシャル<br>Socials', `<ul>
         ${UH.li_GetListElement(`Discord/ ashita_nian`)},
         ${UH.li_GetListElement(`Github/ ${UH.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
         ${UH.li_GetListElement(`Twitter/ ${UH.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <sub><b><i> I have no other way of being contacted</i></b></sub>
       `, 0
     ),
-    UH.createCollapsibleAndContent('読める言語 | Languages I speak', `<ul>
-        ${UH.li_GetListElement("フランス語 | French")}
-        ${UH.li_GetListElement("英語 | English")}
-        ${UH.li_GetListElement("<stike>日本語 | Japanese</strike>")}
+    UH.createCollapsibleAndContent('読める言語<br>Languages I speak', `<ul>
+        ${UH.li_GetListElement("フランス語<br>French")}
+        ${UH.li_GetListElement("英語<br>English")}
+        ${UH.li_GetListElement("<stike>日本語<br>Japanese</strike>")}
       </ul>`, 1
     ),
-    UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング | Programming languages ranked by experience', `<ol>
+    UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング<br>Programming languages ranked by experience', `<ol>
         ${UH.nameIcon('Go        ', 'go')}
         ${UH.nameIcon('C#        ', 'c--4')}
         ${UH.nameIcon('HTML      ', 'html')}
@@ -93,19 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
         ${UH.nameIcon('Ecmascript', 'js')}
       </ol>`, 2
     ),
-    UH.createCollapsibleAndContent('好きです | Likes', `<ul>
+    UH.createCollapsibleAndContent('好きです<br>Likes', `<ul>
         ${UH.li_GetListElement('Arcane')}
         ${UH.li_GetListElement("Arknights' lore")}
         ${UH.li_GetListElement("Wis'adel")}
         ${UH.li_GetListElement('Overwatch 2')}
       </ul>`, 3
     ),
-    UH.createCollapsibleAndContent('好きない | Dislikes', `<ul>
+    UH.createCollapsibleAndContent('好きない<br>Dislikes', `<ul>
         ${UH.li_GetListElement('人')}
         ${UH.li_GetListElement('LoL')}
       </ul>`, 4
     ),
-    UH.createCollapsibleAndContent('便利（べんり）連関（れんかん） | Useful links', `<ul>
+    UH.createCollapsibleAndContent('便利（べんり）連関（れんかん）<br>Useful links', `<ul>
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", "translate")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "Reddit")}`)}
