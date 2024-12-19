@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   title.style.marginLeft = "auto"
   title.style.marginRight = "auto"
   title.style.padding = "30px";
-  title.style.width = "20%";
+  title.style.width = "5em%";
 
   // Create the div with paragraph
   const div = document.createElement('div')
