@@ -19,17 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
   title.style.marginLeft = "auto"
   title.style.marginRight = "auto"
   title.style.padding = "30px";
-  title.style.width = "5em%";
+  title.style.width = "max-content";
 
   // Create the div with paragraph
   const div = document.createElement('div')
   div.className = 'div_'
+  div.style.width = "35%";
+  div.style.marginLeft = "1em"
+  div.style.marginBottom = "1em"
   const imp = document.createElement('p')
   imp.innerHTML = `
     我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることがすきです。
   `
-  imp.style.marginLeft = "1em"
-  imp.style.marginBottom = "1em"
   div.appendChild(imp)
 
 
