@@ -49,24 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
       <sub><b><i> I have no other way of being contacted</i></b></sub>
     `, 0);
     createCollapsible(body, '読める言語', `<ul>
-      <li>フランス語 (native)</li>
-      <li>英語</li>
-      <li>日本語</li>
+        ${li_GetListElement("フランス語")}
+        ${li_GetListElement("英語")}
+        ${li_GetListElement("日本語")}
     </ul>`, 1);
     createCollapsible(body, 'プログラミング言語の経験順にランキング', `<ol>
-    ${nameIcon('Go        ', 'go')}
-    ${nameIcon('C#        ', 'c--4')}
-    ${nameIcon('HTML      ', 'html')}
-    ${nameIcon('Unity     ', 'unity')}
-    ${nameIcon('CSS       ', 'css')}
-    ${nameIcon('Rust      ', 'rust')}
-    ${nameIcon('F#        ', 'fsharp')}
-    ${nameIcon('Haskell   ', 'haskell')}
-    ${nameIcon('C++       ', 'c++')}
-    ${nameIcon('C         ', 'c')}
-    ${nameIcon('OCamL     ', 'ocaml')}
-    ${nameIcon('Python    ', 'python')}
-    ${nameIcon('Ecmascript', 'js')}
+      ${nameIcon('Go        ', 'go')}
+      ${nameIcon('C#        ', 'c--4')}
+      ${nameIcon('HTML      ', 'html')}
+      ${nameIcon('Unity     ', 'unity')}
+      ${nameIcon('CSS       ', 'css')}
+      ${nameIcon('Rust      ', 'rust')}
+      ${nameIcon('F#        ', 'fsharp')}
+      ${nameIcon('Haskell   ', 'haskell')}
+      ${nameIcon('C++       ', 'c++')}
+      ${nameIcon('C         ', 'c')}
+      ${nameIcon('OCamL     ', 'ocaml')}
+      ${nameIcon('Python    ', 'python')}
+      ${nameIcon('Ecmascript', 'js')}
     </ol>`, 2);
     createCollapsible(body, '好きです', `<ul>
     ${li_GetListElement('Arcane')}
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ${li_GetListElement('LoL')}
     </ul>`, 4);
     createCollapsible(body, '連関（れんかん）', `<ul>
-    ${li_GetListElement('Arcane')}
-    ${li_GetListElement("Arknights' lore")}
-    ${li_GetListElement("Wis'adel")}
-    ${li_GetListElement('Overwatch 2')}
+    ${li_GetListElement(`${a_GetAElement("translate.google.com", "translate")}`)}
+    ${li_GetListElement(`${a_GetAElement("reddit.com", "jlailu")}`)}
+    ${li_GetListElement(`${a_GetAElement("jisho.org", "辞書")}`)}
+    ${li_GetListElement(`${a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
     </ul>`, 3);
 });
 function createCollapsible(body, title, content, index) {
