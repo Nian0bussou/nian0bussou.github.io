@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <li>
           Twitter<a href="https://x.com/NianToshi" target="_blank">/NianToshi</a>
         </li>
+        <li>
+          Bluesky<a href="https://bsky.app/profile/ashita-nian.bsky.social" target="_blank">/ashita-nian</a>
+        </li>
       </ul>
       <sub><b><i> I have no other way of being contacted</i></b></sub>
     `, 0);
