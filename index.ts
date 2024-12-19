@@ -45,22 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create collapsible sections
   createCollapsible(body,
-    'ソーシャル', `
-      <ul>
-        ${li_GetListElement(`Discord/ ashita_nian`)},
-        ${li_GetListElement(`Github/ ${a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
-        ${li_GetListElement(`Twitter/ ${a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
-        ${li_GetListElement(`Bluesky/ ${a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
-      </ul>
-      <sub><b><i> I have no other way of being contacted</i></b></sub>
+    'ソーシャル', `<ul>
+      ${li_GetListElement(`Discord/ ashita_nian`)},
+      ${li_GetListElement(`Github/ ${a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
+      ${li_GetListElement(`Twitter/ ${a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
+      ${li_GetListElement(`Bluesky/ ${a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
+    </ul>
+    <sub><b><i> I have no other way of being contacted</i></b></sub>
     `, 0
   )
 
   createCollapsible(body,
     '読める言語', `<ul>
-        ${li_GetListElement("フランス語")}
-        ${li_GetListElement("英語")}
-        ${li_GetListElement("日本語")}
+      ${li_GetListElement("フランス語")}
+      ${li_GetListElement("英語")}
+      ${li_GetListElement("日本語")}
     </ul>`, 1
   )
 
@@ -83,24 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 
   createCollapsible(body, '好きです', `<ul>
-    ${li_GetListElement('Arcane')}
-    ${li_GetListElement("Arknights' lore")}
-    ${li_GetListElement("Wis'adel")}
-    ${li_GetListElement('Overwatch 2')}
+      ${li_GetListElement('Arcane')}
+      ${li_GetListElement("Arknights' lore")}
+      ${li_GetListElement("Wis'adel")}
+      ${li_GetListElement('Overwatch 2')}
     </ul>`, 3
   )
 
   createCollapsible(body, '好きない', `<ul>
-    ${li_GetListElement('人')}
-    ${li_GetListElement('LoL')}
+      ${li_GetListElement('人')}
+      ${li_GetListElement('LoL')}
     </ul>`, 4
   )
 
   createCollapsible(body, '便利（べんり）連関（れんかん）', `<ul>
-    ${li_GetListElement(`${a_GetAElement("https://translate.google.com", "translate")}`)}
-    ${li_GetListElement(`${a_GetAElement("https://www.reddit.com", "jlailu")}`)}
-    ${li_GetListElement(`${a_GetAElement("https://jisho.org", "辞書")}`)}
-    ${li_GetListElement(`${a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
+      ${li_GetListElement(`${a_GetAElement("https://translate.google.com", "translate")}`)}
+      ${li_GetListElement(`${a_GetAElement("https://www.reddit.com", "jlailu")}`)}
+      ${li_GetListElement(`${a_GetAElement("https://jisho.org", "辞書")}`)}
+      ${li_GetListElement(`${a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
     </ul>`, 3
   )
 })
@@ -124,18 +123,21 @@ function createCollapsible(body: HTMLElement, title: string, content: string, in
   button.style.marginBottom = "1em";
   button.textContent = title
 
-  body.appendChild(button)
 
   const contentDiv = document.createElement('div')
   contentDiv.className = `content${index} div_`
   contentDiv.innerHTML = content
   contentDiv.style.marginLeft = "2em"
   contentDiv.style.marginBottom = "1em"
-  body.appendChild(contentDiv)
-
   button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
 
-  body.appendChild(document.createElement('br'))
+  appendList(body, [
+    button,
+    contentDiv,
+    createBR(),
+  ]
+  )
+
 }
 function nameIcon(name: string, icon: string) {
   return li_GetListElement(
