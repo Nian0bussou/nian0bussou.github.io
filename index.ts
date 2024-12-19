@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     'Contacts', `
       <ul>
         <li>
-          Discord\\ ashita_nian
+          Discord/ ashita_nian
         </li>
         <li>
-          Github<a href="https://github.com/Nian0Bussou" target="_blank">/Nian0Bussou</a>
+          Github/ <a href="https://github.com/Nian0Bussou" target="_blank">Nian0Bussou</a>
         </li>
         <li>
-          Twitter<a href="https://x.com/NianToshi" target="_blank">/NianToshi</a>
+          Twitter/ <a href="https://x.com/NianToshi" target="_blank">NianToshi</a>
         </li>
         <li>
-          Bluesky<a href="https://bsky.app/profile/ashita-nian.bsky.social" target="_blank">/ashita-nian</a>
+          Bluesky/ <a href="https://bsky.app/profile/ashita-nian.bsky.social" target="_blank">ashita-nian</a>
         </li>
       </ul>
       <sub><b><i> I have no other way of being contacted</i></b></sub>
