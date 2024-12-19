@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>`, 4
     ),
     UHTML.createCollapsibleAndContent('便利（べんり）連関（れんかん）', `<ul>
+        ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
         ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://translate.google.com", "translate")}`)}
         ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://www.reddit.com", "jlailu")}`)}
         ${UHTML.li_GetListElement(`${UHTML.a_GetAElement("https://jisho.org", "辞書")}`)}
