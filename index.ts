@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create collapsible sections
   createCollapsible(body,
-    'Contacts', `
+    'ソーシャル', `
       <ul>
         <li>
           Discord/ ashita_nian
