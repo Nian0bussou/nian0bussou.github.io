@@ -3,4 +3,4 @@ r:
 
 
 b:
-	clear && tsc && gs && gacm "$(date)" && gpush
+	clear && tsc && git status && git commit -am "$(date)" && git push

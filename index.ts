@@ -15,14 +15,27 @@ enum Languages {
 const defaultLanguage = Languages.Japanese
 let language: Languages = defaultLanguage
 
-function getLangS(ls: string[]) {
-  switch (language) {
-    case Languages.Japanese:
-      return ls[0]
-    case Languages.English:
-      return ls[1]
-  }
+function getLangS(ls: string[]): string {
+  const updateContent = () => {
+    switch (language) {
+      case Languages.Japanese:
+        return ls[0];
+      case Languages.English:
+        return ls[1];
+    }
+  };
+  // Attach a listener to update the content dynamically when the language changes
+  document.addEventListener('languageChange', () => {
+    const elements = document.querySelectorAll('[data-lang-key]');
+    elements.forEach((el) => {
+      const key = el.getAttribute('data-lang-key');
+      if (key && ls[+key]) {
+        el.textContent = ls[+key];
+      }
+    });
+  });
 
+  return updateContent();
 }
 
 const defaultBackground = Backgrounds.Back1
@@ -84,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   UH.appendList(body, [
+    UH.createSelectionBackgrounds(body),
+    UH.createSelectionLanguages(),
     UH.createBR(),
     title,
     UH.createBR(),
@@ -141,8 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3
     ),
-    UH.createSelectionBackgrounds(body),
-    UH.createSelectionLanguages(body),
   ])
 })
 
@@ -222,7 +235,7 @@ class UH {
 
     return select;
   }
-  static createSelectionLanguages(body: HTMLElement): HTMLSelectElement {
+  static createSelectionLanguages(): HTMLSelectElement {
     const select = document.createElement('select');
     Object.entries(Languages).forEach(([key, value]) => {
       const option = document.createElement('option');
@@ -239,7 +252,7 @@ class UH {
       const target = evt.target as HTMLSelectElement;
       const selectedValue = target.value as Languages; // Use value directly
       language = selectedValue;
-      this.changeLanguage(body, language);
+      this.changeLanguage(language);
     });
 
     return select;
@@ -249,10 +262,11 @@ class UH {
     body.style.backgroundImage = `url('${String(bg)}')`;
     UC.setCookie("background", bg);
   }
-  static changeLanguage(body: HTMLElement, lang: Languages): void {
-    // TODO
-    cl(`value : ${lang}`)
+  static changeLanguage(lang: Languages): void {
+    cl(`value : ${lang}`);
+    language = lang;
     UC.setCookie("lang", lang);
+    window.location.reload()
   }
 }
 

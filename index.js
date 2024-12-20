@@ -15,12 +15,25 @@ var Languages;
 const defaultLanguage = Languages.Japanese;
 let language = defaultLanguage;
 function getLangS(ls) {
-    switch (language) {
-        case Languages.Japanese:
-            return ls[0];
-        case Languages.English:
-            return ls[1];
-    }
+    const updateContent = () => {
+        switch (language) {
+            case Languages.Japanese:
+                return ls[0];
+            case Languages.English:
+                return ls[1];
+        }
+    };
+    // Attach a listener to update the content dynamically when the language changes
+    document.addEventListener('languageChange', () => {
+        const elements = document.querySelectorAll('[data-lang-key]');
+        elements.forEach((el) => {
+            const key = el.getAttribute('data-lang-key');
+            if (key && ls[+key]) {
+                el.textContent = ls[+key];
+            }
+        });
+    });
+    return updateContent();
 }
 const defaultBackground = Backgrounds.Back1;
 let background;
@@ -70,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ]);
     div.appendChild(imp);
     UH.appendList(body, [
+        UH.createSelectionBackgrounds(body),
+        UH.createSelectionLanguages(),
         UH.createBR(),
         title,
         UH.createBR(),
@@ -121,8 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", "辞書")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3),
-        UH.createSelectionBackgrounds(body),
-        UH.createSelectionLanguages(body),
     ]);
 });
 // HTML utils
@@ -188,7 +201,7 @@ class UH {
         });
         return select;
     }
-    static createSelectionLanguages(body) {
+    static createSelectionLanguages() {
         const select = document.createElement('select');
         Object.entries(Languages).forEach(([key, value]) => {
             const option = document.createElement('option');
@@ -204,7 +217,7 @@ class UH {
             const target = evt.target;
             const selectedValue = target.value; // Use value directly
             language = selectedValue;
-            this.changeLanguage(body, language);
+            this.changeLanguage(language);
         });
         return select;
     }
@@ -212,10 +225,11 @@ class UH {
         body.style.backgroundImage = `url('${String(bg)}')`;
         UC.setCookie("background", bg);
     }
-    static changeLanguage(body, lang) {
-        // TODO
+    static changeLanguage(lang) {
         cl(`value : ${lang}`);
+        language = lang;
         UC.setCookie("lang", lang);
+        window.location.reload();
     }
 }
 // cookie utils
