@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ),
     UH.createCollapsibleAndContent(
       getLangS(['便利（べんり）連関（れんかん）', 'Useful links']), `<ul>
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', '"The repo of this website"']))}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', 'The repo of this website']))}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "Reddit")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", getLangS(['辞書', 'jisho']))}`)}
