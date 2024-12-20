@@ -7,21 +7,46 @@ var Backgrounds;
     Backgrounds["Back3"] = "back1.png";
     Backgrounds["Back4"] = "backk.jpg";
 })(Backgrounds || (Backgrounds = {}));
+var Languages;
+(function (Languages) {
+    Languages["Japanese"] = "ja";
+    Languages["English"] = "en";
+})(Languages || (Languages = {}));
+const defaultLanguage = Languages.Japanese;
+let language = defaultLanguage;
+function getLangS(ls) {
+    switch (language) {
+        case Languages.Japanese:
+            return ls[0];
+        case Languages.English:
+            return ls[1];
+    }
+}
 const defaultBackground = Backgrounds.Back1;
 let background;
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
-    let cookie = UC.getCookieWithEnum();
-    cl(cookie);
-    if (cookie === null) {
+    let backCookie = UC.getCookieWithEnum("background");
+    cl(backCookie);
+    if (backCookie === null) {
         cl("setCookie to default");
-        UC.setCookie(defaultBackground);
+        UC.setCookie("background", defaultBackground);
     }
-    background = cookie !== null && cookie !== void 0 ? cookie : defaultBackground;
+    background = backCookie;
+    let langCookie = UC.getCookieWithEnum("lang");
+    cl(langCookie);
+    if (langCookie === null) {
+        cl("set to default");
+        UC.setCookie("lang", defaultLanguage);
+    }
+    language = langCookie;
     // body.style.background = cookie ?? defaultBackground
     body.style.backgroundImage = `url('${background}')`;
     const title = document.createElement('h1');
-    title.innerHTML = "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>";
+    title.innerHTML = getLangS([
+        "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>",
+        "Nian's Cave"
+    ]);
     title.style.backdropFilter = "blur(10px)";
     title.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     title.style.borderRadius = "10px";
@@ -39,9 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
     div.style.marginLeft = "1em";
     div.style.marginBottom = "1em";
     const imp = document.createElement('p');
-    imp.innerHTML = `
-    我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることが好きです。
-  `;
+    imp.innerHTML = getLangS([
+        "我はニェン、そしてカナダに住んでいます。レズビアンです。プログラミングとゲームをすることが好きです。",
+        "I am Nian, I'm live in Canada, I'm a lesbian, and I like to program and play games"
+    ]);
     div.appendChild(imp);
     UH.appendList(body, [
         UH.createBR(),
@@ -50,20 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
         div,
         UH.createBR(),
         // collapsible sections
-        UH.createCollapsibleAndContent('ソーシャル<br>Socials', `<ul>
+        UH.createCollapsibleAndContent(getLangS(['ソーシャル', 'Socials']), `<ul>
         ${UH.li_GetListElement(`Discord/ ashita_nian`)}
         ${UH.li_GetListElement(`Github/ ${UH.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
         ${UH.li_GetListElement(`Twitter/ ${UH.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
         ${UH.li_GetListElement(`Bluesky/ ${UH.a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
       </ul>
-      <sub><b><i> I have no other way of being contacted</i></b></sub>
+      <sub><b><i> ${getLangS(["他に連絡を取る手段がない", "I have no other way of being contacted"])}</i></b></sub>
       `, 0),
-        UH.createCollapsibleAndContent('読める言語<br>Languages I speak', `<ul>
-        ${UH.li_GetListElement("フランス語 | French")}
-        ${UH.li_GetListElement("英語 | English")}
-        ${UH.li_GetListElement("<s>日本語 | Japanese</s>")}
+        UH.createCollapsibleAndContent(getLangS(['読める言語', 'Languages I speak']), `<ul>
+        ${UH.li_GetListElement(getLangS(["フランス語", "French"]))}
+        ${UH.li_GetListElement(getLangS(["英語", "English"]))}
+        ${UH.li_GetListElement(getLangS(["<s>日本語", "Japanese</s>"]))}
       </ul>`, 1),
-        UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング<br>Programming languages ranked by experience', `<ol>
+        UH.createCollapsibleAndContent(getLangS(['プログラミング言語の経験順にランキング', 'Programming languages ranked by experience']), `<ol>
         ${UH.nameIcon('Go      ', 'go      ')}
         ${UH.nameIcon('C#      ', 'c--4    ')}
         ${UH.nameIcon('HTML    ', 'html    ')}
@@ -78,24 +104,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ${UH.nameIcon('Python  ', 'python  ')}
         ${UH.nameIcon('JS      ', 'js      ')}
       </ol>`, 2),
-        UH.createCollapsibleAndContent('好きです<br>Likes', `<ul>
+        UH.createCollapsibleAndContent(getLangS(['好きです', 'Likes']), `<ul>
         ${UH.li_GetListElement('Arcane')}
         ${UH.li_GetListElement("Arknights' lore")}
         ${UH.li_GetListElement("Wis'adel")}
         ${UH.li_GetListElement('Overwatch 2')}
       </ul>`, 3),
-        UH.createCollapsibleAndContent('好きない<br>Dislikes', `<ul>
+        UH.createCollapsibleAndContent(getLangS(['好きない', 'Dislikes']), `<ul>
         ${UH.li_GetListElement('人')}
         ${UH.li_GetListElement('LoL')}
       </ul>`, 4),
-        UH.createCollapsibleAndContent('便利（べんり）連関（れんかん）<br>Useful links', `<ul>
+        UH.createCollapsibleAndContent(getLangS(['便利（べんり）連関（れんかん）', 'Useful links']), `<ul>
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", "translate")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "Reddit")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", "辞書")}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3),
-        UH.createSelection(body)
+        UH.createSelectionBackgrounds(body),
+        UH.createSelectionLanguages(body),
     ]);
 });
 // HTML utils
@@ -141,7 +168,7 @@ class UH {
     static createBR() {
         return document.createElement('br');
     }
-    static createSelection(body) {
+    static createSelectionBackgrounds(body) {
         const select = document.createElement('select');
         Object.entries(Backgrounds).forEach(([key, value]) => {
             const option = document.createElement('option');
@@ -161,32 +188,59 @@ class UH {
         });
         return select;
     }
+    static createSelectionLanguages(body) {
+        const select = document.createElement('select');
+        Object.entries(Languages).forEach(([key, value]) => {
+            const option = document.createElement('option');
+            option.value = value; // Set value to the enum's value
+            option.textContent = key; // Display the key as the label
+            cl(`value : ${value}\nlang  : ${language}`);
+            if (value === language) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+        select.addEventListener('change', (evt) => {
+            const target = evt.target;
+            const selectedValue = target.value; // Use value directly
+            language = selectedValue;
+            this.changeLanguage(body, language);
+        });
+        return select;
+    }
     static changeBackground(body, bg) {
         body.style.backgroundImage = `url('${String(bg)}')`;
-        UC.setCookie(bg);
+        UC.setCookie("background", bg);
+    }
+    static changeLanguage(body, lang) {
+        // TODO
+        cl(`value : ${lang}`);
+        UC.setCookie("lang", lang);
     }
 }
 // cookie utils
 class UC {
-    static setCookie(value) {
-        const name = "background";
+    static setCookie(name, value) {
         const date = new Date();
         date.setTime(date.getTime() + 30000000);
         const expires = "expires=" + date.toUTCString();
         document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
     }
-    static getCookieWithEnum() {
-        const name = "background";
+    static getCookieWithEnum(name) {
         const cookieArray = document.cookie.split(';');
         for (const cookie of cookieArray) {
             const [key, value] = cookie.trim().split('=');
             if (key === name) {
                 const decodedValue = decodeURIComponent(value);
-                if (Object.values(Backgrounds).includes(decodedValue)) {
+                // Check against the correct enum based on the cookie name
+                if (name === "background" && Object.values(Backgrounds).includes(decodedValue)) {
+                    return decodedValue;
+                }
+                if (name === "lang" && Object.values(Languages).includes(decodedValue)) {
                     return decodedValue;
                 }
             }
         }
-        return null;
+        return null; // Return null if no valid match is found
     }
 }
