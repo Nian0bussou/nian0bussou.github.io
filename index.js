@@ -15,25 +15,12 @@ var Languages;
 const defaultLanguage = Languages.Japanese;
 let language = defaultLanguage;
 function getLangS(ls) {
-    const updateContent = () => {
-        switch (language) {
-            case Languages.Japanese:
-                return ls[0];
-            case Languages.English:
-                return ls[1];
-        }
-    };
-    // Attach a listener to update the content dynamically when the language changes
-    document.addEventListener('languageChange', () => {
-        const elements = document.querySelectorAll('[data-lang-key]');
-        elements.forEach((el) => {
-            const key = el.getAttribute('data-lang-key');
-            if (key && ls[+key]) {
-                el.textContent = ls[+key];
-            }
-        });
-    });
-    return updateContent();
+    switch (language) {
+        case Languages.Japanese:
+            return ls[0];
+        case Languages.English:
+            return ls[1];
+    }
 }
 const defaultBackground = Backgrounds.Back1;
 let background;
