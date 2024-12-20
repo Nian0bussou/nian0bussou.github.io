@@ -137,22 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
       </ol>`, 2
     ),
     UH.createCollapsibleAndContent(getLangS(['好きです', 'Likes']), `<ul>
-        ${UH.li_GetListElement('Arcane')}
-        ${UH.li_GetListElement("Arknights' lore")}
-        ${UH.li_GetListElement("Wis'adel")}
-        ${UH.li_GetListElement('Overwatch 2')}
+        ${UH.li_GetListElement(getLangS(['アーケイン', 'Arcane']))}
+        ${UH.li_GetListElement(getLangS(["アークナイツの伝承", "Arknights' lore"]))}
+        ${UH.li_GetListElement(getLangS(["ウィシャデル", "Wis'adel"]))}
+        ${UH.li_GetListElement(getLangS(['オーバーウォッチ２', 'Overwatch 2']))}
       </ul>`, 3
     ),
     UH.createCollapsibleAndContent(getLangS(['好きない', 'Dislikes']), `<ul>
-        ${UH.li_GetListElement('人')}
-        ${UH.li_GetListElement('LoL')}
+        ${UH.li_GetListElement(getLangS(['人々', 'People']))}
+        ${UH.li_GetListElement(getLangS(['リーグ・オブ・レジェンド', 'League of Legends']))}
       </ul>`, 4
     ),
-    UH.createCollapsibleAndContent(getLangS(['便利（べんり）連関（れんかん）', 'Useful links']), `<ul>
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", "The repo of this website")}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", "translate")}`)}
+    UH.createCollapsibleAndContent(
+      getLangS(['便利（べんり）連関（れんかん）', 'Useful links']), `<ul>
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', '"The repo of this website"']))}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "Reddit")}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", "辞書")}`)}
+        ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", getLangS(['辞書', 'jisho']))}`)}
         ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3
     ),
