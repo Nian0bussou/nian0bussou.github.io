@@ -78,19 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>`, 1
     ),
     UH.createCollapsibleAndContent('プログラミング言語の経験順にランキング<br>Programming languages ranked by experience', `<ol>
-        ${UH.nameIcon('Go        ', 'go')}
-        ${UH.nameIcon('C#        ', 'c--4')}
-        ${UH.nameIcon('HTML      ', 'html')}
-        ${UH.nameIcon('Unity     ', 'unity')}
-        ${UH.nameIcon('CSS       ', 'css')}
-        ${UH.nameIcon('Rust      ', 'rust')}
-        ${UH.nameIcon('F#        ', 'fsharp')}
-        ${UH.nameIcon('Haskell   ', 'haskell')}
-        ${UH.nameIcon('C++       ', 'c++')}
-        ${UH.nameIcon('C         ', 'c')}
-        ${UH.nameIcon('OCamL     ', 'ocaml')}
-        ${UH.nameIcon('Python    ', 'python')}
-        ${UH.nameIcon('Ecmascript', 'js')}
+        ${UH.nameIcon('Go      ', 'go      ')}
+        ${UH.nameIcon('C#      ', 'c--4    ')}
+        ${UH.nameIcon('HTML    ', 'html    ')}
+        ${UH.nameIcon('Unity   ', 'unity   ')}
+        ${UH.nameIcon('CSS     ', 'css     ')}
+        ${UH.nameIcon('Rust    ', 'rust    ')}
+        ${UH.nameIcon('F#      ', 'fsharp  ')}
+        ${UH.nameIcon('Haskell ', 'haskell ')}
+        ${UH.nameIcon('C++     ', 'c++     ')}
+        ${UH.nameIcon('C       ', 'c       ')}
+        ${UH.nameIcon('OCamL   ', 'ocaml   ')}
+        ${UH.nameIcon('Python  ', 'python  ')}
+        ${UH.nameIcon('JS      ', 'js      ')}
       </ol>`, 2
     ),
     UH.createCollapsibleAndContent('好きです<br>Likes', `<ul>
@@ -152,7 +152,7 @@ class UH {
   }
   static nameIcon(name: string, icon: string): string {
     return this.li_GetListElement(
-      `${name} <img class="icon" src="/svgs/${icon}.svg" alt=" icon" />`
+      `${name.trim()} <img class="icon" src="/svgs/${icon.trim()}.svg" alt=" icon" />`
     )
   }
   static li_GetListElement(str: string): string {
