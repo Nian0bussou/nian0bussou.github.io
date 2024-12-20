@@ -99,25 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
   UH.appendList(body, [
     UH.createSelectionBackgrounds(body),
     UH.createSelectionLanguages(),
-    UH.createBR(),
+    UH.get_br(),
     title,
-    UH.createBR(),
+    UH.get_br(),
     div,
-    UH.createBR(),
+    UH.get_br(),
     // collapsible sections
     UH.createCollapsibleAndContent(getLangS(['ソーシャル', 'Socials']), `<ul>
-        ${UH.li_GetListElement(`Discord/ ashita_nian`)}
-        ${UH.li_GetListElement(`Github/ ${UH.a_GetAElement("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
-        ${UH.li_GetListElement(`Twitter/ ${UH.a_GetAElement("https://x.com/NianToshi", "NianToshi")}`)}
-        ${UH.li_GetListElement(`Bluesky/ ${UH.a_GetAElement("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
+        ${UH.get_li_elem(`Discord/ ashita_nian`)}
+        ${UH.get_li_elem(`Github/ ${UH.get_a_elem("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
+        ${UH.get_li_elem(`Twitter/ ${UH.get_a_elem("https://x.com/NianToshi", "NianToshi")}`)}
+        ${UH.get_li_elem(`Bluesky/ ${UH.get_a_elem("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
       </ul>
       <sub><b><i> ${getLangS(["他に連絡を取る手段がない", "I have no other way of being contacted"])}</i></b></sub>
       `, 0
     ),
     UH.createCollapsibleAndContent(getLangS(['読める言語', 'Languages I speak']), `<ul>
-        ${UH.li_GetListElement(getLangS(["フランス語", "French"]))}
-        ${UH.li_GetListElement(getLangS(["英語", "English"]))}
-        ${UH.li_GetListElement(getLangS(["<s>日本語", "Japanese</s>"]))}
+        ${UH.get_li_elem(getLangS(["フランス語", "French"]))}
+        ${UH.get_li_elem(getLangS(["英語", "English"]))}
+        ${UH.get_li_elem(getLangS(["<s>日本語", "Japanese</s>"]))}
       </ul>`, 1
     ),
     UH.createCollapsibleAndContent(getLangS(['プログラミング言語の経験順にランキング', 'Programming languages ranked by experience']), `<ol>
@@ -137,24 +137,24 @@ document.addEventListener('DOMContentLoaded', () => {
       </ol>`, 2
     ),
     UH.createCollapsibleAndContent(getLangS(['好きです', 'Likes']), `<ul>
-        ${UH.li_GetListElement(getLangS(['アーケイン', 'Arcane']))}
-        ${UH.li_GetListElement(getLangS(["アークナイツの伝承", "Arknights' lore"]))}
-        ${UH.li_GetListElement(getLangS(["ウィシャデル", "Wis'adel"]))}
-        ${UH.li_GetListElement(getLangS(['オーバーウォッチ２', 'Overwatch 2']))}
+        ${UH.get_li_elem(getLangS(['アーケイン', 'Arcane']))}
+        ${UH.get_li_elem(getLangS(["アークナイツの伝承", "Arknights' lore"]))}
+        ${UH.get_li_elem(getLangS(["ウィシャデル", "Wis'adel"]))}
+        ${UH.get_li_elem(getLangS(['オーバーウォッチ２', 'Overwatch 2']))}
       </ul>`, 3
     ),
     UH.createCollapsibleAndContent(getLangS(['好きない', 'Dislikes']), `<ul>
-        ${UH.li_GetListElement(getLangS(['人々', 'People']))}
-        ${UH.li_GetListElement(getLangS(['リーグ・オブ・レジェンド', 'League of Legends']))}
+        ${UH.get_li_elem(getLangS(['人々', 'People']))}
+        ${UH.get_li_elem(getLangS(['リーグ・オブ・レジェンド', 'League of Legends']))}
       </ul>`, 4
     ),
     UH.createCollapsibleAndContent(
       getLangS(['便利（べんり）連関（れんかん）', 'Useful links']), `<ul>
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', 'The repo of this website']))}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://www.reddit.com", "Reddit")}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://jisho.org", getLangS(['辞書', 'jisho']))}`)}
-        ${UH.li_GetListElement(`${UH.a_GetAElement("https://sapling.ai/lang/japanese", "sapling")}`)}
+        ${UH.get_li_elem(`${UH.get_a_elem("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', 'The repo of this website']))}`)}
+        ${UH.get_li_elem(`${UH.get_a_elem("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`)}
+        ${UH.get_li_elem(`${UH.get_a_elem("https://www.reddit.com", "Reddit")}`)}
+        ${UH.get_li_elem(`${UH.get_a_elem("https://jisho.org", getLangS(['辞書', 'jisho']))}`)}
+        ${UH.get_li_elem(`${UH.get_a_elem("https://sapling.ai/lang/japanese", "sapling")}`)}
       </ul>`, 3
     ),
   ])
@@ -188,26 +188,26 @@ class UH {
     button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
 
     const div = document.createElement('div')
-    UH.appendList(div, [button, contentDiv, UH.createBR()])
+    UH.appendList(div, [button, contentDiv, UH.get_br()])
 
     return div
 
   }
   static nameIcon(name: string, icon: string): string {
-    return this.li_GetListElement(
+    return this.get_li_elem(
       `${name.trim()} <img class="icon" src="/svgs/${icon.trim()}.svg" alt=" icon" />`
     )
   }
-  static li_GetListElement(str: string): string {
+  static get_li_elem(str: string): string {
     return `<li>${str}</li>`
   }
-  static a_GetAElement(link: string, name: string): string {
+  static get_a_elem(link: string, name: string): string {
     return `<a href="${link}" target="_blank">${name}</a>`
   }
   static appendList(elem: HTMLElement, ls: HTMLElement[]) {
     ls.forEach((value) => elem.appendChild(value))
   }
-  static createBR(): HTMLBRElement {
+  static get_br(): HTMLBRElement {
     return document.createElement('br')
   }
 
