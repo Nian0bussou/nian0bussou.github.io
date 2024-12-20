@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         UH.createCollapsibleAndContent(getLangS(['読める言語', 'Languages I speak']), `<ul>
         ${UH.get_li_elem(getLangS(["フランス語", "French"]))}
         ${UH.get_li_elem(getLangS(["英語", "English"]))}
-        ${UH.get_li_elem(getLangS(["<s>日本語", "Japanese</s>"]))}
+        ${UH.get_li_elem(getLangS(["<s>日本語</s>", "<s>Japanese</s>"]))}
       </ul>`, 1),
         UH.createCollapsibleAndContent(getLangS(['プログラミング言語の経験順にランキング', 'Programming languages ranked by experience']), `<ol>
         ${UH.nameIcon('Go      ', 'go      ')}
