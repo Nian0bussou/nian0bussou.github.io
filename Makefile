@@ -9,5 +9,5 @@ b:
 	tsc
 	git status
 	git add .
-	git commit -am "mk b"
+	git commit -am "make b"
 	git push
