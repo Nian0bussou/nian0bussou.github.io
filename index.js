@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     body.style.backgroundImage = `url('${background}')`;
     const title = document.createElement('h1');
     title.innerHTML = getLangS([
-        "ニェンの<ruby>洞窟<rt>どうくつ</rt></ruby>",
+        "アーリの<ruby>洞窟<rt>どうくつ</rt></ruby>",
         "Nian's Cave"
     ]);
     title.style.backdropFilter = "blur(10px)";
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     div.style.marginBottom = "1em";
     const imp = document.createElement('p');
     imp.innerHTML = getLangS([
-        "我はニェン、そしてカナダに住んでいましてレズビアンです。プログラミングとゲームをすることが好きです。",
+        "あたしは「みこ」でカナダすんでいまして「レズビアン」で「トランスジェンダー」で「プログラミング」と「ゲームをする」ことがすきです。",
         "I am Nian, I'm live in Canada, I'm a lesbian, and I like to program and play games"
     ]);
     div.appendChild(imp);
