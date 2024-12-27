@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     title.style.backdropFilter = "blur(10px)";
     title.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     title.style.borderRadius = "10px";
-    title.style.color = "beige"
     title.style.color = "rgb(221, 206, 255)";
     title.style.marginBottom = "1em"
     title.style.marginLeft = "auto"
@@ -102,65 +101,61 @@ document.addEventListener('DOMContentLoaded', () => {
         UH.get_br(),
         // collapsible sections
         UH.createCollapsibleAndContent(getLangS(['ソーシャル', 'Socials']),
-            `<ul>
-                ${UH.get_li_elem(`Discord/ ashita_nian`)}
-                ${UH.get_li_elem(`Github/ ${UH.get_a_elem("https://github.com/Nian0Bussou", "Nian0Bussou")}`)}
-                ${UH.get_li_elem(`Twitter/ ${UH.get_a_elem("https://x.com/NianToshi", "NianToshi")}`)}
-                ${UH.get_li_elem(`Bluesky/ ${UH.get_a_elem("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`)}
-            </ul>
-            <sub><b><i> ${getLangS(["他に連絡を取る手段がない", "I have no other way of being contacted"])}</i></b></sub>
-            `, 0
+            [
+                `Discord/ ashita_nian`,
+                `Github/ ${UH.get_a_elem("https://github.com/Nian0Bussou", "Nian0Bussou")}`,
+                `Twitter/ ${UH.get_a_elem("https://x.com/NianToshi", "NianToshi")}`,
+                `Bluesky/ ${UH.get_a_elem("https://bsky.app/profile/ashita-nian.bsky.social", "ashita-nian")}`,
+                `<sub><b><i> ${getLangS(["他に連絡を取る手段がない", "I have no other way of being contacted"])}</i></b></sub>`
+            ], 0, false
         ),
         UH.createCollapsibleAndContent(getLangS(['読める言語', 'Languages I speak']),
-            `<ul>
-                ${UH.get_li_elem(getLangS(["フランス語", "French"]))}
-                ${UH.get_li_elem(getLangS(["英語", "English"]))}
-                ${UH.get_li_elem(getLangS(["<s>日本語</s>", "<s>Japanese</s>"]))}
-            </ul>`, 1
+            [
+                getLangS(["フランス語", "French"]),
+                getLangS(["英語", "English"]),
+                getLangS(["<s>日本語</s>", "<s>Japanese</s>"])
+            ], 1, false
         ),
         UH.createCollapsibleAndContent(getLangS(['プログラミング言語の経験順にランキング', 'Programming languages ranked by experience']),
-            `<ol>
-                ${UH.nameIcon('Go      ', 'go      ')}
-                ${UH.nameIcon('C#      ', 'c--4    ')}
-                ${UH.nameIcon('HTML    ', 'html    ')}
-                ${UH.nameIcon('Unity   ', 'unity   ')}
-                ${UH.nameIcon('CSS     ', 'css     ')}
-                ${UH.nameIcon('Rust    ', 'rust    ')}
-                ${UH.nameIcon('F#      ', 'fsharp  ')}
-                ${UH.nameIcon('Haskell ', 'haskell ')}
-                ${UH.nameIcon('C++     ', 'c++     ')}
-                ${UH.nameIcon('C       ', 'c       ')}
-                ${UH.nameIcon('OCamL   ', 'ocaml   ')}
-                ${UH.nameIcon('Python  ', 'python  ')}
-                ${UH.nameIcon('JS      ', 'js      ')}
-            </ol>`, 2
+            [
+                UH.nameIcon('Go      ', 'go      '),
+                UH.nameIcon('C#      ', 'c--4    '),
+                UH.nameIcon('HTML    ', 'html    '),
+                UH.nameIcon('Unity   ', 'unity   '),
+                UH.nameIcon('CSS     ', 'css     '),
+                UH.nameIcon('Rust    ', 'rust    '),
+                UH.nameIcon('F#      ', 'fsharp  '),
+                UH.nameIcon('Haskell ', 'haskell '),
+                UH.nameIcon('C++     ', 'c++     '),
+                UH.nameIcon('C       ', 'c       '),
+                UH.nameIcon('OCamL   ', 'ocaml   '),
+                UH.nameIcon('Python  ', 'python  '),
+                UH.nameIcon('JS      ', 'js      ')
+            ], 2, true
         ),
         UH.createCollapsibleAndContent(getLangS(['好きです', 'Likes']),
-            `<ul>
-                ${UH.get_li_elem(getLangS(['アーケイン', 'Arcane']))}
-                ${UH.get_li_elem(getLangS(["アークナイツの伝承", "Arknights' lore"]))}
-                ${UH.get_li_elem(getLangS(["ウィシャデル", "Wis'adel"]))}
-                ${UH.get_li_elem(getLangS(['オーバーウォッチ２', 'Overwatch 2']))}
-            </ul>`,
-            3
+            [
+                getLangS(['アーケイン', 'Arcane']),
+                getLangS(["アークナイツの伝承", "Arknights' lore"]),
+                getLangS(["ウィシャデル", "Wis'adel"]),
+                getLangS(['オーバーウォッチ２', 'Overwatch 2']),
+            ], 3, false
         ),
         UH.createCollapsibleAndContent(getLangS(['好きない', 'Dislikes']),
-            `<ul>
-                ${UH.get_li_elem(getLangS(['人々', 'People']))}
-                ${UH.get_li_elem(getLangS(['リーグ・オブ・レジェンド', 'League of Legends']))}
-            </ul>`,
-            4
+            [
+                getLangS(['人々', 'People']),
+                getLangS(['リーグ・オブ・レジェンド', 'League of Legends'])
+            ], 4, false
         ),
         UH.createCollapsibleAndContent(
             getLangS(['便利（べんり）連関（れんかん）', 'Useful links']),
-            `<ul>
-                ${UH.get_li_elem(`${UH.get_a_elem("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', 'The repo of this website']))}`)}
-                ${UH.get_li_elem(`${UH.get_a_elem("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`)}
-                ${UH.get_li_elem(`${UH.get_a_elem("https://www.reddit.com", "Reddit")}`)}
-                ${UH.get_li_elem(`${UH.get_a_elem("https://jisho.org", getLangS(['辞書', 'jisho']))}`)}
-                ${UH.get_li_elem(`${UH.get_a_elem("https://sapling.ai/lang/japanese", "sapling")}`)}
-            </ul>`,
-            3
+            [
+                `${UH.get_a_elem("https://github.com/Nian0bussou/nian0bussou.github.io", getLangS(['このサイトのリポー', 'The repo of this website']))}`,
+                `${UH.get_a_elem("https://translate.google.com", getLangS(['翻訳する', 'Translate']))}`,
+                `${UH.get_a_elem("https://www.reddit.com", "Reddit")}`,
+                `${UH.get_a_elem("https://jisho.org", getLangS(['辞書', 'jisho']))}`,
+                `${UH.get_a_elem("https://sapling.ai/lang/japanese", "sapling")}`,
+            ], 3, false
         ),
     ])
     UH.appendList(body, UH.get_50br())
@@ -168,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // HTML utils
 class UH {
-    static createCollapsibleAndContent(title: string, content: string, index: number): HTMLElement {
+    static createCollapsibleAndContent(title: string, contents: string[], index: number, orderedornot: boolean): HTMLElement {
         const style = document.createElement('style')
         style.textContent = `
             .content${index} {
@@ -187,11 +182,20 @@ class UH {
 
         const contentDiv = document.createElement('div')
         contentDiv.className = `content${index} div_`
-        contentDiv.innerHTML = content
         contentDiv.style.marginLeft = "2em"
         contentDiv.style.marginBottom = "1em"
-        button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
 
+
+        const list = document.createElement('ul')
+
+        for (let i = 0; i < contents.length; i++) {
+            const li = UH.get_li_elem(contents[i])
+            list.appendChild(li)
+        }
+
+        contentDiv.appendChild(list)
+
+        button.addEventListener('click', () => { contentDiv.classList.toggle('open') })
         const div = document.createElement('div')
         UH.appendList(div, [button, contentDiv, UH.get_br()])
 
@@ -199,12 +203,13 @@ class UH {
 
     }
     static nameIcon(name: string, icon: string): string {
-        return this.get_li_elem(
-            `${name.trim()} <img class="icon" src="/svgs/${icon.trim()}.svg" alt=" icon" />`
-        )
+        return `${name.trim()} <img class="icon" src="/svgs/${icon.trim()}.svg" alt=" icon" />`
+
     }
-    static get_li_elem(str: string): string {
-        return `<li>${str}</li>`
+    static get_li_elem(str: string): HTMLLIElement {
+        const li = document.createElement("li")
+        li.innerHTML = str
+        return li
     }
     static get_a_elem(link: string, name: string): string {
         return `<a href="${link}" target="_blank">${name}</a>`
@@ -215,7 +220,6 @@ class UH {
     static get_br(): HTMLBRElement {
         return document.createElement('br')
     }
-
     static get_50br(): HTMLBRElement[] {
         let ls: HTMLBRElement[] = []
         for (let i = 0; i < 50; i++) {
@@ -223,7 +227,6 @@ class UH {
         }
         return ls
     }
-
     static createSelectionBackgrounds(body: HTMLElement): HTMLSelectElement {
         const select = document.createElement('select');
         Object.entries(Backgrounds).forEach(([key, value]) => {
@@ -271,7 +274,6 @@ class UH {
 
         return select;
     }
-
     static changeBackground(body: HTMLElement, bg: Backgrounds): void {
         body.style.backgroundImage = `url('${String(bg)}')`;
         UC.setCookie("background", bg);
