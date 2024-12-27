@@ -2,20 +2,20 @@
 let cl = console.log;
 var Backgrounds;
 (function (Backgrounds) {
-    Backgrounds["Ahri"] = "backs/back.jpg";
-    Backgrounds["Ahri2"] = "backs/back1.png";
-    Backgrounds["NianJudgingYou"] = "backs/backk.jpg";
-    Backgrounds["W_Skyline"] = "backs/back-w-city-skyline.jpg";
-    Backgrounds["Miko_walking_snow"] = "backs/175ed80795a43a983bb0d5422f6449b2768.jpg";
-    Backgrounds["Miko_raining_grayish"] = "backs/_10710cdadd80d8a4f6b42345da1239ec34133.jpg";
-    Backgrounds["Miko_hair_windy"] = "backs/_1106aa6c04c2c063d8981f4ba300170c6278.jpg";
-    Backgrounds["Miko_needy_fox"] = "backs/_1216dc985c32c3f62891b7d721b5c732397f.jpg";
-    Backgrounds["Miko_raiden_running_rain"] = "backs/_12700495167177440d8de59f1071dd6e7c3e.jpg";
-    Backgrounds["Miko_raiden_kithing"] = "backs/_1394eb8cdb35ed9d180f984c87d174fed867.jpg";
-    Backgrounds["Miko_raiden_bathing"] = "backs/_1691f99fa7901889e160b4cce05caa6e0227.jpg";
-    Backgrounds["Miko_sleepy_fox"] = "backs/_6014c8f8ff0776079306f1d244c1bab53782.jpg";
-    Backgrounds["Miko_raiden_read_gay_seggs"] = "backs/_6025bf066ca7e756b504abe5936647922263.png";
-    Backgrounds["Miko_autumn_feels"] = "backs/_8347ad6fbe8febb758386de93d8015a1c47a.jpg";
+    Backgrounds["Ahri"] = "back.jpg";
+    Backgrounds["Ahri2"] = "back1.png";
+    Backgrounds["NianJudgingYou"] = "backk.jpg";
+    Backgrounds["W_Skyline"] = "back-w-city-skyline.jpg";
+    Backgrounds["Miko_walking_snow"] = "175ed80795a43a983bb0d5422f6449b2768.jpg";
+    Backgrounds["Miko_raining_grayish"] = "_10710cdadd80d8a4f6b42345da1239ec34133.jpg";
+    Backgrounds["Miko_hair_windy"] = "_1106aa6c04c2c063d8981f4ba300170c6278.jpg";
+    Backgrounds["Miko_needy_fox"] = "_1216dc985c32c3f62891b7d721b5c732397f.jpg";
+    Backgrounds["Miko_raiden_running_rain"] = "_12700495167177440d8de59f1071dd6e7c3e.jpg";
+    Backgrounds["Miko_raiden_kithing"] = "_1394eb8cdb35ed9d180f984c87d174fed867.jpg";
+    Backgrounds["Miko_raiden_bathing"] = "_1691f99fa7901889e160b4cce05caa6e0227.jpg";
+    Backgrounds["Miko_sleepy_fox"] = "_6014c8f8ff0776079306f1d244c1bab53782.jpg";
+    Backgrounds["Miko_raiden_read_gay_seggs"] = "_6025bf066ca7e756b504abe5936647922263.png";
+    Backgrounds["Miko_autumn_feels"] = "_8347ad6fbe8febb758386de93d8015a1c47a.jpg";
 })(Backgrounds || (Backgrounds = {}));
 var Languages;
 (function (Languages) {
