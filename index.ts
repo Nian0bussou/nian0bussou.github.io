@@ -1,10 +1,20 @@
 let cl = console.log
 
 enum Backgrounds {
-    Back1 = "back-w-city-skyline.jpg",
-    Back2 = "back.jpg",
-    Back3 = "back1.png",
-    Back4 = "backk.jpg",
+    Ahri = "backs/back.jpg",
+    Ahri2 = "backs/back1.png",
+    NianJudgingYou = "backs/backk.jpg",
+    W_Skyline = "backs/back-w-city-skyline.jpg",
+    Miko_walking_snow = "backs/175ed80795a43a983bb0d5422f6449b2768.jpg",
+    Miko_raining_grayish = "backs/_10710cdadd80d8a4f6b42345da1239ec34133.jpg",
+    Miko_hair_windy = "backs/_1106aa6c04c2c063d8981f4ba300170c6278.jpg",
+    Miko_needy_fox = "backs/_1216dc985c32c3f62891b7d721b5c732397f.jpg",
+    Miko_raiden_running_rain = "backs/_12700495167177440d8de59f1071dd6e7c3e.jpg",
+    Miko_raiden_kithing = "backs/_1394eb8cdb35ed9d180f984c87d174fed867.jpg",
+    Miko_raiden_bathing = "backs/_1691f99fa7901889e160b4cce05caa6e0227.jpg",
+    Miko_sleepy_fox = "backs/_6014c8f8ff0776079306f1d244c1bab53782.jpg",
+    Miko_raiden_read_gay_seggs = "backs/_6025bf066ca7e756b504abe5936647922263.png",
+    Miko_autumn_feels = "backs/_8347ad6fbe8febb758386de93d8015a1c47a.jpg",
 }
 
 enum Languages {
@@ -24,7 +34,7 @@ function getLangS(ls: string[]): string {
     }
 }
 
-const defaultBackground = Backgrounds.Back1
+const defaultBackground = Backgrounds.Miko_autumn_feels
 let background: Backgrounds
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.createElement('h1')
     title.innerHTML = getLangS([
-        "アーリの<ruby>洞窟<rt>どうくつ</rt></ruby>",
-        "Nian's Cave"
+        "<ruby>神子<rt>みこ</rt></ruby>の<ruby>洞窟<rt>どうくつ</rt></ruby>",
+        "Miko's Cave"
     ])
     title.style.backdropFilter = "blur(10px)";
     title.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
@@ -76,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const imp = document.createElement('p')
     imp.innerHTML = getLangS(
         [
-            "あたしは「みこ」でカナダすんでいまして「レズビアン」で「トランスジェンダー」で「プログラミング」と「ゲームをする」ことがすきです。",
-            "I am Nian, I'm live in Canada, I'm a lesbian, and I like to program and play games"
+            "あたしは「みこ」でカナダ住んでいまして「レズビアン」で「トランスジェンダー」で「プログラミング」と「ゲームをする」ことが好きです。",
+            "I'm Miko, live in Canada, a lesbian, and I like to program and play games"
         ])
     div.appendChild(imp)
 
