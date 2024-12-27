@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             3
         ),
     ])
+    UH.appendList(body, UH.get_50br())
 })
 
 // HTML utils
@@ -213,6 +214,14 @@ class UH {
     }
     static get_br(): HTMLBRElement {
         return document.createElement('br')
+    }
+
+    static get_50br(): HTMLBRElement[] {
+        let ls: HTMLBRElement[] = []
+        for (let i = 0; i < 50; i++) {
+            ls[i] = document.createElement('br')
+        }
+        return ls
     }
 
     static createSelectionBackgrounds(body: HTMLElement): HTMLSelectElement {

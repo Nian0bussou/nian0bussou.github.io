@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${UH.get_li_elem(`${UH.get_a_elem("https://sapling.ai/lang/japanese", "sapling")}`)}
             </ul>`, 3),
     ]);
+    UH.appendList(body, UH.get_50br());
 });
 // HTML utils
 class UH {
@@ -176,6 +177,13 @@ class UH {
     }
     static get_br() {
         return document.createElement('br');
+    }
+    static get_50br() {
+        let ls = [];
+        for (let i = 0; i < 50; i++) {
+            ls[i] = document.createElement('br');
+        }
+        return ls;
     }
     static createSelectionBackgrounds(body) {
         const select = document.createElement('select');
