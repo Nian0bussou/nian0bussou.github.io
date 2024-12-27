@@ -264,7 +264,7 @@ class UH {
     }
 
     static changeBackground(body: HTMLElement, bg: Backgrounds): void {
-        body.style.backgroundImage = `url('${String(bg)}')`;
+        body.style.backgroundImage = `url('backs/${String(bg)}')`;
         UC.setCookie("background", bg);
     }
     static changeLanguage(lang: Languages): void {

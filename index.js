@@ -218,7 +218,7 @@ class UH {
         return select;
     }
     static changeBackground(body, bg) {
-        body.style.backgroundImage = `url('${String(bg)}')`;
+        body.style.backgroundImage = `url('backs/${String(bg)}')`;
         UC.setCookie("background", bg);
     }
     static changeLanguage(lang) {
