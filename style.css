@@ -1,70 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap');
+
+* {
+    font-family: "Klee One";
+}
+
 body {
-  background-image: url('back-w-city-skyline.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  height: 100%;
-  margin: 0;
-  font-size: 1.3em;
-  min-height: 100%;
-  flex-direction: column;
-  color: black;
+    background-image: url('back-w-city-skyline.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    font-size: 1.3em;
+    min-height: 100%;
+    flex-direction: column;
+    color: black;
 }
 
 html {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .footer {
-  background: #ccc;
-  text-align: center;
-  padding: 10px;
+    background: #ccc;
+    text-align: center;
+    padding: 10px;
 }
 
 a:link {
-  color: white;
+    color: white;
 }
 
 a:visited {
-  color: beige;
+    color: beige;
 }
 
 a:hover {
-  color: white;
+    color: white;
 }
 
 a:active {
-  color: white;
+    color: white;
 }
 
 .but_tits {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .div_ {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  color: rgb(221, 206, 255);
-  padding: 10px;
-  width: max-content;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    color: rgb(221, 206, 255);
+    padding: 10px;
+    width: max-content;
 }
 
 .button_ {
-  width: max-content;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid white;
-  padding: 1%;
-  color: beige;
-  cursor: pointer;
+    width: max-content;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    padding: 1%;
+    color: beige;
+    cursor: pointer;
 }
 
 .icon {
-  vertical-align: middle;
-  margin: 2%;
-  height: 3em;
+    vertical-align: middle;
+    margin: 2%;
+    height: 3em;
 }
 
 /*
@@ -76,7 +82,7 @@ a:active {
 
 */
 
-.button-33 {
+/* .button-33 {
   width: max-content;
   background-color: #c2fbd7;
   border-radius: 100px;
@@ -99,48 +105,50 @@ a:active {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+*/
+
 
 .button-33:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
+    box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+        rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+        rgba(44, 187, 99, 0.25) 0 16px 32px;
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .tooltip .tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
